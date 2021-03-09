@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="org.yakindu.sct.model.sgraph.ScopeMember"/>
+    <fullyQualifiedTypeName name="org.yakindu.sct.model.sgraph.Scope"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.events.Event"/>
+    <fullyQualifiedTypeName name="org.yakindu.base.types.Event"/>
+    <fullyQualifiedTypeName name="org.yakindu.base.types.Property"/>
+</qualifiedTypeNameHistroy>

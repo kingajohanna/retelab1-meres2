@@ -43,7 +43,7 @@ public class Main {
 			EObject content = iterator.next();
 			if(content instanceof State) {
 				State state = (State) content;
-				//System.out.println(state.getName());
+				System.out.println(state.getName());
 				//nincs név
 				if (state.getName() == "") {
 					state.setName("NoName" + nev);

@@ -25,13 +25,9 @@ public class RunStatechart {
 		s.init();
 		s.enter();
 		
-		while(sc.hasNext()) {
+		while(!event.equals("exit") && sc.hasNext()) {
 			event = sc.nextLine();
 			
-			if(event.equals("exit")) {
-				sc.close();
-				System.exit(0);
-			}
 			//megnézi, hogy egyezik-e valamelyik paranccsal, ha igen végrehajtja
 			switch(event) {
 				case "start":
@@ -49,7 +45,10 @@ public class RunStatechart {
 			s.runCycle();
 			print(s);
 		}
-		
+		if(event.equals("exit")) {
+			sc.close();
+			System.exit(0);
+		}
 	}
 
 	public static void print(IExampleStatemachine s) {

@@ -43,7 +43,7 @@ public class Main {
 			EObject content = iterator.next();
 			if(content instanceof State) {
 				State state = (State) content;
-				//System.out.println(state.getName());
+				System.out.println(state.getName());
 				//nincs név
 				if (state.getName() == "") {
 					state.setName("NoName" + nev);
@@ -72,7 +72,9 @@ public class Main {
 						System.out.println("public class RunStatechart {\r\n" + 
 								"	\r\n" + 
 								"	public static void main(String[] args) throws IOException {\r\n" + 
+								"		//új scanner a beolvasáshoz\r\n" + 
 								"		Scanner sc = new Scanner(System.in);\r\n" + 
+								"		//string ami tárolja a beolvasott sort\r\n" + 
 								"		String event = \"\";\r\n" + 
 								"		\r\n" + 
 								"		ExampleStatemachine s = new ExampleStatemachine();\r\n" + 
@@ -89,6 +91,7 @@ public class Main {
 								"				sc.close();\r\n" + 
 								"				System.exit(0);\r\n" + 
 								"			}\r\n" + 
+								"			//megnézi, hogy egyezik-e valamelyik paranccsal, ha igen végrehajtja\r\n" + 
 								"			switch(event) {");
 					System.out.println(
 							"				case \"" + event.getName() + "\":\r\n" + 

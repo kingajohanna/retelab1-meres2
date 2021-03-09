@@ -43,7 +43,7 @@ public class Main {
 			EObject content = iterator.next();
 			if(content instanceof State) {
 				State state = (State) content;
-				//System.out.println(state.getName());
+				
 				//nincs név
 				if (state.getName() == "") {
 					state.setName("NoName" + nev);
@@ -61,7 +61,7 @@ public class Main {
 						out.setName("NoName" + nev);
 						nev++;
 					}
-					//System.out.println(state.getName() + " -> " + out.getName());
+					System.out.println(state.getName() + " -> " + out.getName());
 				}
 			}else if(content instanceof Scope) {
 				Scope scope = (Scope) content;
@@ -82,13 +82,9 @@ public class Main {
 								"		s.init();\r\n" + 
 								"		s.enter();\r\n" + 
 								"		\r\n" + 
-								"		while(sc.hasNext()) {\r\n" + 
+								"		while(!event.equals(\"exit\") && sc.hasNext()) {\r\n" + 
 								"			event = sc.nextLine();\r\n" + 
 								"			\r\n" + 
-								"			if(event.equals(\"exit\")) {\r\n" + 
-								"				sc.close();\r\n" + 
-								"				System.exit(0);\r\n" + 
-								"			}\r\n" + 
 								"			switch(event) {");
 					System.out.println(
 							"				case \"" + event.getName() + "\":\r\n" + 
@@ -103,7 +99,10 @@ public class Main {
 							//a változó nevét írom ki, hogy megváltoztatott változónevekkel is értelmes legyen a kód
 							System.out.println("			System.out.println(\"" + prop.getName() + "= \" + s.getSCInterface().get" + prop.getName() + "());");
 						} 
-						System.out.println(
+						System.out.println("		}\r\n" + 
+								"		if(event.equals(\"exit\")) {\r\n" + 
+								"			sc.close();\r\n" + 
+								"			System.exit(0);\r\n" + 
 								"		}\r\n" + 
 								"	}\r\n}");
 					}

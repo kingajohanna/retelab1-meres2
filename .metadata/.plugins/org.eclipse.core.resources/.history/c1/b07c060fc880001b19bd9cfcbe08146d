@@ -43,7 +43,7 @@ public class Main {
 			EObject content = iterator.next();
 			if(content instanceof State) {
 				State state = (State) content;
-				//System.out.println(state.getName());
+				System.out.println(state.getName());
 				//nincs név
 				if (state.getName() == "") {
 					state.setName("NoName" + nev);
@@ -84,11 +84,11 @@ public class Main {
 								"		\r\n" + 
 								"		while(sc.hasNext()) {\r\n" + 
 								"			event = sc.nextLine();\r\n" + 
+								"		}\r\n" + 
+								"		if(event.equals(\"exit\")) {\r\n" + 
+								"			sc.close();\r\n" + 
+								"			System.exit(0);\r\n" + 
 								"			\r\n" + 
-								"			if(event.equals(\"exit\")) {\r\n" + 
-								"				sc.close();\r\n" + 
-								"				System.exit(0);\r\n" + 
-								"			}\r\n" + 
 								"			switch(event) {");
 					System.out.println(
 							"				case \"" + event.getName() + "\":\r\n" + 
